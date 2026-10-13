@@ -4,6 +4,9 @@ import type { SkipKind } from './settings';
 const HOOKS: Readonly<Record<string, SkipKind>> = {
   'player-skip-intro': 'intro',
   'player-skip-recap': 'recap',
+  // Post-play episode controls only. Never match the persistent toolbar Next button.
+  'next-episode-seamless-button': 'nextEpisode',
+  'next-episode-seamless-button-draining': 'nextEpisode',
 };
 export const CONTROL_SELECTOR = Object.keys(HOOKS)
   .map((hook) => `[data-uia="${hook}"]`).join(',');
