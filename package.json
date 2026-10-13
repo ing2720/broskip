@@ -13,9 +13,11 @@
     "test": "vitest run",
     "check": "npm run typecheck && npm test && npm run build",
     "dev": "node scripts/dev.mjs",
-    "package": "npm run build && node scripts/package.mjs"
+    "package": "npm run build && node scripts/package.mjs",
+    "store:assets": "node scripts/store-assets.mjs"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
     "@types/chrome": "0.3.4",
     "@types/node": "22.20.5",
     "esbuild": "0.28.2",
