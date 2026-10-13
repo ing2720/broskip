@@ -205,6 +205,18 @@ describe('event-driven skip detection', () => {
     await settle();
     expect(click).not.toHaveBeenCalled();
   });
+
+  it('re-arms a reused cue when OFF spans a rewatch and the user turns it ON', () => {
+    const { button, click } = cue();
+    document.body.append(button);
+    engine.start();
+    expect(click).toHaveBeenCalledTimes(1);
+    engine.updateSettings({ ...DEFAULT_SETTINGS, enabled: false });
+    button.hidden = true;
+    button.hidden = false;
+    engine.updateSettings({ ...DEFAULT_SETTINGS });
+    expect(click).toHaveBeenCalledTimes(2);
+  });
 });
 
 describe('settings validation', () => {

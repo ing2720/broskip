@@ -141,6 +141,9 @@ export function createSkipEngine(options: EngineOptions = {}) {
         observer.disconnect();
         observing = false;
         candidates.clear();
+        // Hidden/reappeared cues cannot be observed while OFF. Re-arm on explicit ON.
+        clicked = new WeakSet();
+        lastClick.clear();
       } else {
         connect();
         rescan();

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netflix Supporter 설정</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <span class="brand-icon" aria-hidden="true">»</span>
+      <div><p class="eyebrow">NETFLIX SUPPORTER</p><h1>이야기에만 집중하세요.</h1></div>
+    </header>
+    <form id="settings" aria-label="자동 스킵 설정" aria-busy="true">
+      <label class="master" for="enabled">
+        <span><strong>자동 스킵</strong><span id="status" class="status" role="status" data-active="false">설정 읽는 중</span></span>
+        <input type="checkbox" id="enabled" name="enabled" role="switch" aria-label="자동 스킵" disabled>
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+      <p class="section-label">넘길 구간</p>
+      <div class="options">
+        <label class="option" for="intro">
+          <span><strong>오프닝</strong><small>인트로 건너뛰기</small></span>
+          <input type="checkbox" id="intro" name="intro" role="switch" disabled>
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+        <label class="option" for="recap">
+          <span><strong>지난 줄거리</strong><small>지난 이야기 건너뛰기</small></span>
+          <input type="checkbox" id="recap" name="recap" role="switch" disabled>
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+        <label class="option" for="nextEpisode">
+          <span><strong>다음 회차로</strong><small>엔딩에서 다음 화 이어보기</small></span>
+          <input type="checkbox" id="nextEpisode" name="nextEpisode" role="switch" aria-describedby="credits-note" disabled>
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+      </div>
+      <p id="credits-note" class="note">엔딩 뒤 추가 장면을 보려면 ‘다음 회차로’를 꺼두세요.</p>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </form>
+    <footer><span class="dot" aria-hidden="true"></span>추가 대기 없음<span class="divider">·</span>이 기기에만 저장</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
