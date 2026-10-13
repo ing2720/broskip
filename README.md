@@ -21,16 +21,13 @@ Netflix의 오프닝·지난 줄거리·다음 회차 버튼을 클릭 가능한
 
 ## 설치
 
-Chrome 120 이상을 대상으로 합니다. 전달받은 ZIP을 풀고 `chrome://extensions` → 개발자 모드 → **압축해제된 확장 프로그램을 로드합니다** → `extension` 폴더를 선택합니다. Netflix 탭은 새로고침하세요.
+**Chrome 웹스토어 출시 준비 중입니다. 아직 스토어에서 설치할 수 없습니다.**
 
-소스에서 설치하려면:
+심사·게시가 완료되면 이곳에 공식 설치 링크를 제공합니다. 배포 후에는 PC Chrome에서 스토어 페이지의 **Chrome에 추가**를 누르고 열려 있는 Netflix 탭을 새로고침하면 됩니다. 일반 사용자는 ZIP·개발자 모드·Node.js가 필요하지 않습니다.
 
-```sh
-npm ci
-npm run check
-```
+[설치 및 사용 안내](docs/INSTALL.ko.md) · [개인정보 처리방침](PRIVACY.md)
 
-생성된 `dist` 폴더를 Chrome에 로드합니다. 개발 도구는 Node.js 22 이상이며 ZIP 사용자에게 Node.js는 필요하지 않습니다. [한국어 설치 안내](docs/INSTALL.ko.md)
+소스에서 실행하는 개발자는 [기여 안내](CONTRIBUTING.md)를 참고하세요.
 
 ## 설계
 
@@ -47,7 +44,7 @@ TypeScript · Chrome Manifest V3 · esbuild · Vitest/jsdom. ZIP 라이브러리
 ```sh
 npm run check     # 타입 검사 → 회귀 테스트 → 빌드
 npm run dev       # http://127.0.0.1:4173 모의 플레이어와 설정창
-npm run package   # 설치 ZIP + SHA-256
+npm run package   # 웹스토어 제출 ZIP + SHA-256
 ```
 
 모의 플레이어의 '검증 실행'으로 실제 브라우저에서 버튼 삽입·활성화, 숨김, 중복 억제, 회차 전환 등을 재현합니다. 미리보기 저장소는 실제 Chrome 확장 저장소와 구분합니다. 측정값을 Netflix 실서비스 성능으로 일반화하지 않습니다. [검증 결과와 미확인 범위](docs/VALIDATION.md)
