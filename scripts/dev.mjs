@@ -6,6 +6,7 @@ import { extname, resolve, sep } from 'node:path';
 const root = resolve('artifacts/demo');
 await mkdir(root, { recursive: true });
 await cp('demo/index.html', `${root}/index.html`);
+await cp('store/screenshot.html', `${root}/store.html`);
 await cp('demo/demo.css', `${root}/demo.css`);
 await cp('public/popup.css', `${root}/popup.css`);
 await writeFile(`${root}/popup.html`, (await readFile('public/popup.html', 'utf8')).replace('src="popup.js"', 'src="demo-popup.js"'));
