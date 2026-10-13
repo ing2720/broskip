@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Netflix Supporter — 재현 테스트</title><link rel="stylesheet" href="demo.css"></head>
+<body>
+  <header class="top"><a href="/">» <span>NETFLIX SUPPORTER</span></a><span class="tag">SYNTHETIC DEMO · 실제 Netflix 화면 아님</span></header>
+  <main>
+    <section class="intro"><p class="kicker">작은 기능. 끊기지 않는 이야기.</p><h1>버튼이 켜지는 순간,<br><span>이야기는 계속됩니다.</span></h1><p class="description">추가 대기 없이 필요한 버튼만 클릭하는 Chrome 확장 프로그램.<br>아래 화면은 직접 만든 테스트용 플레이어입니다.</p></section>
+    <div class="workspace">
+      <section class="lab">
+        <div class="player" id="player"><div class="player-label">MOCK PLAYER <span>01 / 03</span></div><div class="scene"><span class="scene-line"></span><span class="scene-number">01</span><p>THE NEXT CHAPTER</p></div><div id="cue-stage" class="cue-stage"></div><div class="timeline"><span></span></div><div class="player-footer"><span>재현용 장면 · 영상 없음</span><span id="counter">클릭 0회</span></div></div>
+        <div class="toolbar"><div><h2>실제 브라우저에서 확인하기</h2><p>버튼 삽입·활성화부터 클릭까지 기록합니다.</p></div><button id="run">검증 실행 <span>↗</span></button></div>
+        <div id="summary" class="summary" role="status">검증을 실행하면 결과가 여기에 표시됩니다.</div>
+        <ol id="results" aria-label="검증 결과"></ol>
+      </section>
+      <aside><div class="preview-label">확장 프로그램 설정창 <span>PREVIEW</span></div><iframe src="popup.html" title="설정창 미리보기"></iframe><p class="preview-note">설정창은 모의 저장소를 사용하며 검증은 별도 설정으로 실행합니다.<br>Chrome 확장 프로그램 설치 상태를 뜻하지 않습니다.</p></aside>
+    </div>
+    <footer>Netflix와 제휴하지 않은 개인 프로젝트 · 영상·자막·계정 정보를 수집하지 않습니다.</footer>
+  </main><script src="demo.js"></script>
+</body></html>
