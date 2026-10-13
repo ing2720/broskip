@@ -1,6 +1,10 @@
 # Chrome 웹스토어 등록 자료
 
-상태: 출시 준비 중. 항목 생성·업로드·심사 제출·게시 미완료.
+상태: 2026-10-13 스토어 항목 생성 및 0.1.0 ZIP 업로드 완료. 등록정보·개인정보·테스트 안내는 초안으로 저장했으며 심사 제출·게시 전입니다. 사용자가 새 이름을 검토 중이므로 이름 확정 전에는 제출하지 않습니다.
+
+- 항목 ID: `hdbdcfigldnjlghcmoaojkhokdbdmkna`
+- 배포 초안: 무료, 인앱 구매 없음, 공개, 전체 지역. 공개 범위는 제출 전에 다시 확인합니다.
+- 남은 콘솔 요건: 스토어 아이콘·스크린샷 업로드, 게시자 연락처 이메일 입력 및 인증.
 
 ## 기본 정보
 
@@ -11,7 +15,7 @@
 - 가격: 무료
 - 홈페이지: https://github.com/ing2720/netflix-supporter
 - 지원: https://github.com/ing2720/netflix-supporter/issues
-- 개인정보 처리방침: https://github.com/ing2720/netflix-supporter/blob/main/PRIVACY.md (main 반영 후 공개 URL 확인)
+- 개인정보 처리방침: https://github.com/ing2720/netflix-supporter/blob/main/PRIVACY.md (main 반영 및 공개 접근 확인)
 
 ## 상세 설명
 
@@ -39,7 +43,8 @@ Netflix와 제휴하지 않은 독립적인 확장 프로그램입니다. Netfli
 - storage 사용 이유: 전체 및 종류별 자동 스킵 설정 네 개의 Boolean 값을 chrome.storage.local에 저장하고 열린 Netflix 탭에 반영합니다.
 - 사이트 접근 이유: https://www.netflix.com/*의 재생 경로와 지원 버튼의 표시·활성 상태를 기기 메모리에서 확인하여 해당 버튼을 클릭합니다. 경로·페이지 내용을 저장하거나 전송하지 않습니다.
 - 원격 코드: 사용하지 않습니다. 실행 코드는 제출 ZIP에 포함됩니다.
-- 사용자 데이터 수집·전송: 없음. 로컬 설정 및 일시적인 페이지 상태 처리는 PRIVACY.md에 명시합니다.
+- 외부 수집·전송 및 영구 시청 기록: 없음. 로컬 설정 및 일시적인 페이지 상태 처리는 PRIVACY.md에 명시합니다.
+- 콘솔의 데이터 유형에는 로컬 경로와 DOM 처리 범위를 공개하기 위해 ‘웹 기록’과 ‘웹사이트 콘텐츠’를 선택했습니다. 이는 시청 기록 저장이나 영상 수집을 의미하지 않습니다. Google FAQ는 기기 내에서만 처리하는 정보도 공개하도록 안내합니다: https://developer.chrome.com/docs/webstore/program-policies/user-data-faq
 
 ## 심사자 안내
 
@@ -55,13 +60,13 @@ Netflix와 제휴하지 않은 독립적인 확장 프로그램입니다. Netfli
 - artifacts/netflix-supporter-0.1.0-webstore.zip: 루트 manifest와 실행 파일만 포함
 - public/icons/icon-128.png: 스토어 아이콘
 - store/promo-440x280.png: 소형 홍보 이미지
-- store/screenshot-1280x800.png: 실제 설정 UI를 사용하는 모의 화면 캡처
+- store/screenshot-1280x800.jpg: 실제 설정 UI를 사용하는 모의 화면 캡처
 
-## 결제 후 남은 단계
+## 이름 확정 후 남은 단계
 
-1. 개인 Google 계정으로 개발자 등록 약관 확인 및 수수료 결제.
-2. 항목 생성 후 제출 ZIP 업로드. 스토어 항목 ID 기록.
-3. 위 문구·이미지·개인정보 관행 입력, 필요한 개발자 연락처 인증.
+1. 확장 표시명·툴팁·설정 UI·문서와 스토어 설명을 새 이름으로 통일합니다.
+2. 새 이름의 ZIP을 기존 초안 항목에 업로드하고 설정 UI 이미지를 다시 캡처합니다. JPEG/알파 없는 PNG 등 실제 파일 형식과 확장자·규격을 확인합니다.
+3. 아이콘·이미지 업로드와 게시자 연락처 이메일 인증을 완료합니다.
 4. 공개 범위 선택: 검색 가능한 공개 또는 링크로만 접근하는 미등록. 둘 다 스토어 설치와 심사가 필요함.
 5. 심사 제출 후 승인·게시 확인. 실제 스토어 설치 URL을 README와 docs/INSTALL.ko.md에 반영.
 6. 스토어 설치본의 설정 저장·재생 동작 확인. 기존 수동 설치본과 동시에 켜두지 않도록 안내.
