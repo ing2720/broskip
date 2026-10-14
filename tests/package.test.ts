@@ -19,7 +19,7 @@ describe('Chrome Web Store package', () => {
       writeFileSync(join(directory, 'private-token.txt'), 'must not ship');
       const run = () => execFileSync(process.execPath, [script], { cwd: directory, stdio: 'pipe' });
       run();
-      const archive = join(directory, 'artifacts/netflix-supporter-0.1.0-webstore.zip');
+      const archive = join(directory, 'artifacts/broskip-0.1.0-webstore.zip');
       const first = readFileSync(archive);
       const files = unzipSync(first);
       expect(Object.keys(files).sort()).toEqual(['content.js', 'icons/icon-128.png', 'manifest.json']);

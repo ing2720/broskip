@@ -1,6 +1,6 @@
 # Chrome 웹스토어 등록 자료
 
-상태: 2026-10-13 스토어 항목 생성 및 0.1.0 ZIP 업로드 완료. 등록정보·개인정보·테스트 안내는 초안으로 저장했으며 심사 제출·게시 전입니다. 사용자가 새 이름을 검토 중이므로 이름 확정 전에는 제출하지 않습니다.
+상태: 2026-10-13 스토어 항목 생성 및 0.1.0 ZIP 업로드 완료. 등록정보·개인정보·테스트 안내는 초안으로 저장했으며 심사 제출·게시 전입니다. 2026-10-14 제품명과 저장소 이름을 `broskip`으로 확정했습니다. 표시명·문서·설정 UI·제출 ZIP과 스크린샷을 새 이름으로 갱신했습니다. 콘솔 패키지 교체 중 Google 재인증이 요구되어 원격 초안 반영 완료는 아직 확인하지 못했습니다.
 
 - 항목 ID: `hdbdcfigldnjlghcmoaojkhokdbdmkna`
 - 배포 초안: 무료, 인앱 구매 없음, 공개, 전체 지역. 공개 범위는 제출 전에 다시 확인합니다.
@@ -8,20 +8,20 @@
 
 ## 기본 정보
 
-- 이름: Netflix Supporter
+- 이름: broskip
 - 요약: 오프닝·지난 줄거리·다음 회차 버튼이 활성화되면 대기 없이 클릭합니다.
 - 기본 언어: 한국어
 - 카테고리 후보: 접근성 또는 도구 (콘솔에서 제공하는 분류 중 실제 기능에 맞게 선택)
 - 가격: 무료
-- 홈페이지: https://github.com/ing2720/netflix-supporter
-- 지원: https://github.com/ing2720/netflix-supporter/issues
-- 개인정보 처리방침: https://github.com/ing2720/netflix-supporter/blob/main/PRIVACY.md (main 반영 및 공개 접근 확인)
+- 홈페이지: https://github.com/ing2720/broskip
+- 지원: https://github.com/ing2720/broskip/issues
+- 개인정보 처리방침: https://github.com/ing2720/broskip/blob/main/PRIVACY.md (main 반영 및 공개 접근 확인)
 
 ## 상세 설명
 
 버튼이 켜지면, 이야기는 계속됩니다.
 
-Netflix Supporter는 Netflix가 표시하는 오프닝·지난 줄거리·엔딩의 다음 회차 버튼을 자동으로 누르는 가벼운 Chrome 확장 프로그램입니다.
+broskip은 Netflix가 표시하는 오프닝·지난 줄거리·엔딩의 다음 회차 버튼을 자동으로 누르는 가벼운 Chrome 확장 프로그램입니다.
 
 • 오프닝과 지난 줄거리 건너뛰기
 • 엔딩에서 다음 회차 이어보기
@@ -29,7 +29,7 @@ Netflix Supporter는 Netflix가 표시하는 오프닝·지난 줄거리·엔딩
 • 설정은 이 기기에만 저장
 • 버튼이 표시되고 활성화되면 인위적인 대기 없이 클릭
 
-설치 후 Netflix 탭을 새로고침하세요. Chrome의 확장 프로그램 메뉴에서 Netflix Supporter를 열면 구간별 설정을 바꿀 수 있습니다. 엔딩 뒤 추가 장면을 보려면 ‘다음 회차로’를 꺼두세요.
+설치 후 Netflix 탭을 새로고침하세요. Chrome의 확장 프로그램 메뉴에서 broskip을 열면 구간별 설정을 바꿀 수 있습니다. 엔딩 뒤 추가 장면을 보려면 ‘다음 회차로’를 꺼두세요.
 
 광고 건너뛰기, 영상 다운로드, DRM 우회, 콘텐츠 잠금 해제 기능은 없습니다. Netflix가 지원하는 버튼을 제공하지 않거나 사이트 UI가 변경되면 동작하지 않을 수 있습니다. Netflix 이용에는 정상적인 서비스 이용 권한이 필요합니다.
 
@@ -57,15 +57,15 @@ Netflix와 제휴하지 않은 독립적인 확장 프로그램입니다. Netfli
 
 ## 제출 파일
 
-- artifacts/netflix-supporter-0.1.0-webstore.zip: 루트 manifest와 실행 파일만 포함
+- artifacts/broskip-0.1.0-webstore.zip: 루트 manifest와 실행 파일만 포함
 - public/icons/icon-128.png: 스토어 아이콘
 - store/promo-440x280.png: 소형 홍보 이미지
 - store/screenshot-1280x800.jpg: 실제 설정 UI를 사용하는 모의 화면 캡처
 
-## 이름 확정 후 남은 단계
+## 제출 전 남은 단계
 
-1. 확장 표시명·툴팁·설정 UI·문서와 스토어 설명을 새 이름으로 통일합니다.
-2. 새 이름의 ZIP을 기존 초안 항목에 업로드하고 설정 UI 이미지를 다시 캡처합니다. JPEG/알파 없는 PNG 등 실제 파일 형식과 확장자·규격을 확인합니다.
+1. Google 재인증 후 기존 초안에 새 이름의 ZIP을 업로드하고 항목명이 broskip으로 바뀌었는지 확인합니다.
+2. 콘솔 설명·홈페이지·지원·개인정보 처리방침·심사 안내 링크를 새 저장소 주소로 변경합니다.
 3. 아이콘·이미지 업로드와 게시자 연락처 이메일 인증을 완료합니다.
 4. 공개 범위 선택: 검색 가능한 공개 또는 링크로만 접근하는 미등록. 둘 다 스토어 설치와 심사가 필요함.
 5. 심사 제출 후 승인·게시 확인. 실제 스토어 설치 URL을 README와 docs/INSTALL.ko.md에 반영.

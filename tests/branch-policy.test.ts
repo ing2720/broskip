@@ -12,8 +12,8 @@ function check(head: string, base: string, fork = false) {
   try {
     const event = join(directory, 'event.json');
     writeFileSync(event, JSON.stringify({ pull_request: {
-      head: { ref: head, repo: { full_name: fork ? 'contributor/netflix-supporter' : 'ing2720/netflix-supporter' } },
-      base: { ref: base, repo: { full_name: 'ing2720/netflix-supporter' } },
+      head: { ref: head, repo: { full_name: fork ? 'contributor/broskip' : 'ing2720/broskip' } },
+      base: { ref: base, repo: { full_name: 'ing2720/broskip' } },
     } }));
     return execFileSync(process.execPath, [script], {
       env: { ...process.env, GITHUB_EVENT_PATH: event }, encoding: 'utf8', stdio: 'pipe',

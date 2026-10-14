@@ -26,7 +26,7 @@ async function start() {
     // Fail closed instead of overriding a possibly saved OFF preference.
     engine?.stop();
     chrome.storage.onChanged.removeListener(onChanged);
-    console.warn('[Netflix Supporter] 설정을 읽지 못해 자동 스킵을 시작하지 않았습니다. 페이지를 새로고침하세요.');
+    console.warn('[broskip] 설정을 읽지 못해 자동 스킵을 시작하지 않았습니다. 페이지를 새로고침하세요.');
   }
 }
 

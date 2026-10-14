@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Netflix Supporter",
+  "name": "broskip",
   "version": "0.1.0",
   "minimum_chrome_version": "120",
   "description": "오프닝·지난 줄거리·다음 회차 버튼이 활성화되면 대기 없이 클릭합니다.",
@@ -8,7 +8,7 @@
     "storage"
   ],
   "action": {
-    "default_title": "Netflix Supporter",
+    "default_title": "broskip",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",

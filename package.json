@@ -1,5 +1,5 @@
 {
-  "name": "netflix-supporter",
+  "name": "broskip",
   "version": "0.1.0",
   "private": true,
   "description": "A small, event-driven Netflix auto-skip Chrome extension",
