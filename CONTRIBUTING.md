@@ -54,6 +54,6 @@ npm run package
 
 로컬 개발·검증에서는 `chrome://extensions`의 개발자 모드에서 `dist`를 로드합니다. 일반 사용자 설치 경로는 게시 후 Chrome 웹스토어입니다.
 
-`artifacts/netflix-supporter-<version>-webstore.zip`은 `manifest.json`이 최상위에 있는 제출 전용 ZIP입니다. 아이콘 변경 시 `npm run store:assets`로 원본 도형에서 PNG를 다시 생성합니다. 스토어 등록 이미지와 문구는 `store/`, 개인정보 안내는 `PRIVACY.md`에 있습니다. 게시 전 실제 스토어 ID를 발급받고 README와 설치 안내에 동일한 설치 URL을 반영합니다.
+`artifacts/broskip-<version>-webstore.zip`은 `manifest.json`이 최상위에 있는 제출 전용 ZIP입니다. 아이콘 변경 시 `npm run store:assets`로 원본 도형에서 PNG를 다시 생성합니다. 스토어 등록 이미지와 문구는 `store/`, 개인정보 안내는 `PRIVACY.md`에 있습니다. 게시 전 실제 스토어 ID를 발급받고 README와 설치 안내에 동일한 설치 URL을 반영합니다.
 
-설정 UI가 바뀌면 `npm run dev` 후 `http://127.0.0.1:4173/store.html`을 1280×800 뷰포트에서 캡처해 `store/screenshot-1280x800.png`를 갱신합니다. 이 화면은 실제 팝업 코드와 모의 저장소를 사용하며 Netflix 재생 검증 자료가 아닙니다.
+설정 UI가 바뀌면 `npm run dev` 후 `http://127.0.0.1:4173/store.html`을 1280×800 뷰포트에서 캡처해 `store/screenshot-1280x800.jpg`를 갱신합니다. 캡처의 실제 인코딩과 확장자를 일치시킵니다. 이 화면은 실제 팝업 코드와 모의 저장소를 사용하며 Netflix 재생 검증 자료가 아닙니다.
