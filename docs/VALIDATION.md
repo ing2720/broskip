@@ -2,7 +2,7 @@
 
 ## 초기 구현 검증 (2026-10-05)
 
-macOS, Node.js 26.8.1, npm 11.19.0에서 `npm run check`로 TypeScript strict 검사, 45개 Vitest 테스트(jsdom 및 게시 도구 테스트), esbuild 빌드를 확인했다. 2026-10-05 GitHub Actions의 Node.js 22/Ubuntu에서도 구현 커밋 `efb25bf`의 [검사와 빌드 산출물 업로드가 성공했다](https://github.com/ing2720/netflix-supporter/actions/runs/37299712474). 이는 Linux의 자동 테스트·빌드 검증이며 실제 브라우저 재생 검증은 아니다.
+macOS, Node.js 26.8.1, npm 11.19.0에서 `npm run check`로 TypeScript strict 검사, 45개 Vitest 테스트(jsdom 및 게시 도구 테스트), esbuild 빌드를 확인했다. 2026-10-05 GitHub Actions의 Node.js 22/Ubuntu에서도 구현 커밋 `efb25bf`의 [검사와 빌드 산출물 업로드가 성공했다](https://github.com/ing2720/broskip/actions/runs/37299712474). 이는 Linux의 자동 테스트·빌드 검증이며 실제 브라우저 재생 검증은 아니다.
 
 테스트는 버튼 삽입·활성화, 조상 숨김·CSS·화면 밖 상태, 중복 클릭 및 재생성, 재시청, browse→watch 진입, 회차 교체, 추천작·상시 다음 버튼 제외, 전체/종류별 OFF 및 복구를 포함한다. 관계없는 자막 변경에서 레이아웃을 재확인하지 않는 동작과 설정창의 저장 실패·초기 읽기 경합도 검증한다.
 

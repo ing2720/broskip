@@ -23,7 +23,7 @@ export async function createStoreArchive(directory) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const { bytes, version } = await createStoreArchive('dist');
-  const filename = `netflix-supporter-${version}-webstore.zip`;
+  const filename = `broskip-${version}-webstore.zip`;
   await mkdir('artifacts', { recursive: true });
   await writeFile(`artifacts/${filename}`, bytes);
   await writeFile('artifacts/SHA256SUMS', `${createHash('sha256').update(bytes).digest('hex')}  ${filename}\n`);

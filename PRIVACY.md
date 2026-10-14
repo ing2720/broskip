@@ -1,8 +1,8 @@
 # 개인정보 처리방침
 
-시행일: 2026-10-13 · 적용 대상: Netflix Supporter 0.1.0
+시행일: 2026-10-13 · 적용 대상: broskip 0.1.0
 
-Netflix Supporter는 Netflix가 화면에 제공하는 오프닝·지난 줄거리·다음 회차 버튼을 자동으로 누르는 독립적인 Chrome 확장 프로그램입니다. Netflix가 제공하거나 승인한 공식 제품이 아닙니다.
+broskip는 Netflix가 화면에 제공하는 오프닝·지난 줄거리·다음 회차 버튼을 자동으로 누르는 독립적인 Chrome 확장 프로그램입니다. Netflix가 제공하거나 승인한 공식 제품이 아닙니다.
 
 ## 확장 프로그램이 처리하는 정보
 
@@ -24,6 +24,6 @@ Chrome 웹스토어 설치·자동 업데이트와 Netflix 자체 서비스의 �
 
 ## 문의와 변경 안내
 
-문의: [GitHub Issues](https://github.com/ing2720/netflix-supporter/issues)
+문의: [GitHub Issues](https://github.com/ing2720/broskip/issues)
 
 문의 게시판은 공개됩니다. 비밀번호·쿠키·계정 정보·시청 기록을 게시하지 마세요. 사용자가 자발적으로 게시한 문의 내용에는 GitHub의 개인정보 정책이 적용됩니다. 정보 처리 방식이 변경되면 이 문서와 Chrome 웹스토어 안내를 업데이트합니다.
