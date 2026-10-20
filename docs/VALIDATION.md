@@ -1,5 +1,19 @@
 # 검증 기록
 
+## YouTube 광고 건너뛰기 0.2.0 (2026-10-20)
+
+- `npm run check`: 타입 검사, 69개 테스트(6개 파일), 빌드 통과. 기존 53개에 YouTube 엔진·경로·권한·설정 이전 15개와 팝업 독립 설정 1개를 추가했다.
+- jsdom에서는 버튼 삽입, disabled/hidden/aria-disabled 해제, 숨겨진 카운트다운 컨테이너, 광고 재진입, 중복 억제, SPA 영상 전환, 전체/개별 OFF, 종료 후 이벤트 해제 및 비대상 버튼 제외를 검증했다.
+- 실제 YouTube PC 웹의 광고에서 `button.ytp-skip-ad-button` 및 `#movie_player.ad-showing`을 관찰했다. 페이지 새로고침 직후 별도의 격리 실행 환경에서 **동일한 엔진과 YouTube 어댑터**를 실행해 자동 클릭 2회, 이후 광고 상태 해제와 스킵 버튼 제거, 본편 플레이어 복귀를 확인했다. 광고 두 개를 각각 추적한 기록이나 클릭 지연 측정은 아니다.
+- 기존 Netflix 모의 브라우저 시나리오 13/13 통과. 이번 실행의 삽입/활성화→클릭은 0.40–1.20ms로 관찰했으며 실제 Netflix 응답 시간으로 일반화하지 않는다.
+- 위 재생 검증은 인앱 브라우저에서 엔진을 직접 실행한 결과다. Chrome 확장 설치본의 manifest 주입·실제 chrome.storage·권한 승인·스토어 자동 업데이트를 검증한 것은 아니다. 테스트 탭은 종료해 임시 실행 코드를 정리했다.
+- 실제 팝업 코드와 모의 localStorage에서 YouTube OFF → 새로고침 후 유지 및 Netflix 옵션 유지 확인. 팝업 크기 360×577.5px, footer 하단 561.5px로 확인했다. 스토어용 JPEG는 1280×800이며 실제 팝업을 표시한다.
+- `npm run package`와 `unzip -t` 통과. ZIP 9,978 bytes, content.js 4,832 bytes, popup.js 1,934 bytes. 런타임 의존성·반복 타이머·외부 전송은 추가하지 않았다.
+
+아직 확인하지 않은 범위: 설치본의 저장소·탭 간 설정 이벤트, 다른 광고 UI 실험군·언어·계정, Windows/Linux, 백그라운드·전체 화면, 기존 Netflix 실재생 재검증. YouTube 지원은 PC 웹 `/watch?v=…`에 한정하며 Shorts·외부 삽입 플레이어를 제외한다. 비공개 CSS 클래스가 바뀌면 새 관찰과 수정이 필요하다.
+
+0.2.0의 스토어 업로드·심사 제출·배포는 아직 진행하지 않았다.
+
 ## 초기 구현 검증 (2026-10-05)
 
 macOS, Node.js 26.8.1, npm 11.19.0에서 `npm run check`로 TypeScript strict 검사, 45개 Vitest 테스트(jsdom 및 게시 도구 테스트), esbuild 빌드를 확인했다. 2026-10-05 GitHub Actions의 Node.js 22/Ubuntu에서도 구현 커밋 `efb25bf`의 [검사와 빌드 산출물 업로드가 성공했다](https://github.com/ing2720/broskip/actions/runs/37299712474). 이는 Linux의 자동 테스트·빌드 검증이며 실제 브라우저 재생 검증은 아니다.
