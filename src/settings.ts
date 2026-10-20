@@ -1,10 +1,11 @@
-export type SkipKind = 'intro' | 'recap' | 'nextEpisode';
+export type SkipKind = 'intro' | 'recap' | 'nextEpisode' | 'youtubeAd';
 export type Settings = { enabled: boolean } & Record<SkipKind, boolean>;
 export const DEFAULT_SETTINGS: Readonly<Settings> = Object.freeze({
   enabled: true,
   intro: true,
   recap: true,
   nextEpisode: true,
+  youtubeAd: true,
 });
 
 /** Invalid stored values cannot turn settings into truthy strings/objects. */

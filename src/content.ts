@@ -1,7 +1,12 @@
 import { createSkipEngine } from './engine';
 import { normalizeSettings } from './settings';
+import { netflixAdapter } from './netflix';
+import { youtubeAdapter } from './youtube';
 
 async function start() {
+  const adapter = location.hostname === 'www.netflix.com' ? netflixAdapter
+    : location.hostname === 'www.youtube.com' ? youtubeAdapter : null;
+  if (!adapter) return;
   // Read settings before clicking anything, including a saved global OFF.
   let revision = 0;
   let engine: ReturnType<typeof createSkipEngine> | undefined;
@@ -11,7 +16,7 @@ async function start() {
     const settings = normalizeSettings(changes.settings.newValue);
     if (engine) engine.updateSettings(settings);
     else {
-      engine = createSkipEngine({ settings });
+      engine = createSkipEngine({ settings, adapter });
       engine.start();
     }
   };
@@ -19,7 +24,7 @@ async function start() {
   try {
     const initial = await chrome.storage.local.get('settings');
     if (revision === 0) {
-      engine = createSkipEngine({ settings: normalizeSettings(initial.settings) });
+      engine = createSkipEngine({ settings: normalizeSettings(initial.settings), adapter });
       engine.start();
     }
   } catch {
