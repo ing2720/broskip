@@ -1,7 +1,9 @@
-import { CONTROL_SELECTOR, classifyControl, isActionable, watchKey } from './netflix';
+import { netflixAdapter } from './netflix';
+import type { SkipAdapter } from './adapter';
 import { DEFAULT_SETTINGS, type Settings, type SkipKind } from './settings';
 
 export interface EngineOptions {
+  adapter?: SkipAdapter;
   settings?: Settings;
   getWatchKey?: () => string | null;
   actionable?: (element: HTMLElement) => boolean;
@@ -12,8 +14,10 @@ export interface EngineOptions {
 /** Event-driven detection. No interval, network request, or debounce before a click. */
 export function createSkipEngine(options: EngineOptions = {}) {
   let settings = { ...(options.settings ?? DEFAULT_SETTINGS) };
-  const getWatchKey = options.getWatchKey ?? watchKey;
-  const actionable = options.actionable ?? isActionable;
+  const adapter = options.adapter ?? netflixAdapter;
+  const { selector: CONTROL_SELECTOR, classifyControl } = adapter;
+  const getWatchKey = options.getWatchKey ?? adapter.watchKey;
+  const actionable = options.actionable ?? adapter.isActionable;
   const now = options.now ?? (() => performance.now());
   const candidates = new Set<HTMLElement>();
   let clicked = new WeakSet<HTMLElement>();
@@ -133,6 +137,7 @@ export function createSkipEngine(options: EngineOptions = {}) {
       document.addEventListener('transitionend', onTransition, true);
       document.addEventListener('animationend', onTransition, true);
       document.addEventListener('fullscreenchange', rescan);
+      for (const event of adapter.routeEvents ?? []) document.addEventListener(event, rescan);
       rescan();
     },
     updateSettings(next: Settings) {
@@ -160,6 +165,7 @@ export function createSkipEngine(options: EngineOptions = {}) {
       document.removeEventListener('transitionend', onTransition, true);
       document.removeEventListener('animationend', onTransition, true);
       document.removeEventListener('fullscreenchange', rescan);
+      for (const event of adapter.routeEvents ?? []) document.removeEventListener(event, rescan);
     },
   };
 }
