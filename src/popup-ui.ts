@@ -53,7 +53,7 @@ export async function mountPopup(root: Document, store: SettingsStore): Promise<
     render();
     try {
       await store.write(settings);
-      message.textContent = store.savedMessage ?? '저장했어요. 열려 있는 Netflix에도 적용돼요.';
+      message.textContent = store.savedMessage ?? '저장했어요. 열려 있는 지원 사이트에도 적용돼요.';
     } catch {
       settings = previous;
       message.textContent = '저장하지 못했어요. 다시 시도해주세요.';
