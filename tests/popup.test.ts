@@ -10,6 +10,17 @@ beforeEach(() => {
 });
 
 describe('popup preferences', () => {
+  it('saves YouTube OFF without changing Netflix preferences', async () => {
+    const write = vi.fn(async (_settings: Settings) => {});
+    await mountPopup(document, {
+      read: async () => ({ ...DEFAULT_SETTINGS, intro: false }),
+      write, subscribe: () => () => {},
+    });
+    input('youtubeAd').click();
+    await settle();
+    expect(write).toHaveBeenCalledWith({ ...DEFAULT_SETTINGS, intro: false, youtubeAd: false });
+    expect(input('recap').checked).toBe(true);
+  });
   it('loads global OFF and retains individual choices on re-enable', async () => {
     const write = vi.fn(async (_settings: Settings) => {});
     await mountPopup(document, {
