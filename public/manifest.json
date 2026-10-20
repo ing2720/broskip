@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "broskip",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minimum_chrome_version": "120",
   "description": "Netflix 오프닝·지난 줄거리·다음 회차와 YouTube 광고 건너뛰기 버튼이 활성화되면 자동으로 클릭합니다.",
   "permissions": [
